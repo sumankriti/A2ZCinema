@@ -1,0 +1,226 @@
+
+<div class="header" id="home">
+   
+  <!-- header-top -->
+  
+  <!--// header-top -->
+  <!-- header-middle -->
+  <div class="header-middle" style="height:70px;">
+     
+    <div class="container">
+      <div class="logof-w3-agile">
+        <a><i class="fa fa-download"></i> Download Mobile App</a>
+      </div>
+      <div class="searchf-w3-agileits-headr">
+          <div class="box">
+              <div class="container-4">
+                <input type="search" class="search" placeholder="Search by Actor,Actress,Director etc......." />
+                <button class="icon"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+      </div>
+      <div *ngIf="isUser" class="cart-mainf">
+          <a style="background-color: #fff;"><span data-toggle="modal" data-target="#myModal"  style="cursor:pointer" >Login/</span><span data-toggle="modal" data-target="#register" style="cursor:pointer"> Register </span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      </div>
+      <div *ngIf="isLogin" class="cart-mainf">
+          <div ngbDropdown class="">
+            <span  data-toggle="modal" data-target="#picture" ><i class="fa fa-user alter" aria-hidden="true"></i>&nbsp;&nbsp;</span> <span id="dropdownBasic1" ngbDropdownToggle style="margin-rigth:60px;cursor:pointer;"><span>{{userDetail.name}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="display: none;">
+                  <li (click)="profileClick()" style="cursor:pointer">
+                      <span style="margin-left:10px;"><i class="fa fa-user" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">My Profile</span></span>
+                    </li>
+                <li (click)="updateProfile()" style="cursor:pointer">
+                    <span style="margin-left:10px;"><i class="fa fa-user" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">Update Profile</span></span>
+                  </li>
+                  <li  style="cursor:pointer">
+                      <span style="margin-left:10px;"><i class="fa fa-trash-o" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">Delete Gallery</span></span>
+                    </li>
+                    <li  style="cursor:pointer">
+                        <span style="margin-left:10px;"><i class="fa fa-remove" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">Delete Videos</span></span>
+                      </li>
+                      <li (click)="changePassword()" style="cursor:pointer">
+                          <span style="margin-left:10px;"><i class="fa fa-circle" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">Change Password</span></span>
+                        </li>
+                        <li (click)="onLogout()" style="cursor:pointer">
+                            <span style="margin-left:10px;"><i class="fa fa-sign-out" aria-hidden="true" style="color:#0095ff" ></i>&nbsp;&nbsp;&nbsp;<span style="color:black;">Log Out</span></span>
+                          </li>
+              </div>
+            </div>
+        </div>
+      <div class="clearfix" style="margin-top:40px;"></div>
+    </div>
+  </div>
+  <!--// header-middle -->
+  <nav class="navbar navbar-inverse" style="max-width: 1350px; margin-top:10px; background-color: #012b72;height:100px;">
+    <div class="navbar-header">
+        <div class="header__logo" style="margin-top:10px;margin-top:10px;"><a [routerLink]="['/']"><img src="assets\images\logo2.png"  style="height:70px;" alt=""/></a></div>
+      <button class="navbar-toggle" style="margin-top:-50px;" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+    </div>
+    <div class="clearfix">
+    <div class="collapse js-navbar-collapse navbar-collapse ">
+        <ul class="nav navbar-nav" style="margin-top:40px;">
+          <div class="row">
+            <div class="col-lg-1 col-sm-1">
+                <li><a  style="color:white;cursor:pointer;" [routerLink]="['/']" >Home</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-40px;">
+                <li ><a  style="color:white;cursor:pointer;" [routerLink]="['/audition']">Auditions Forum</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-40px;">
+                <li><a  style="color:white;cursor:pointer;" [routerLink]="['/hirerentjoin']" >Hire-Rent-Join (Agencies)</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-40px;">
+                <li><a  style="color:white;cursor:pointer;" [routerLink]="['/crowdfunding']" >Crowd Funding</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-40px;">
+                <li><a  style="color:white;cursor:pointer;">Movie Distribution</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-40px;">
+                <li ><a  style="color:white;cursor:pointer;" >Short Films Hub</a></li>
+            </div>
+            <div class="col-lg-2 col-sm-2" style="margin-left:-90px;">
+                <li><a  style="color:white;cursor:pointer;" >Subscriptions</a></li>
+            </div>
+            <div class="col-lg-1 col-sm-1"  style="margin-left:-40px;">
+                <li class="dropdown mega-dropdown">
+                    <a  style="color:white;cursor:pointer;" class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
+                    <ul class="dropdown-menu mega-dropdown-menu" style="margin-left:-20px;">
+                      <li class="col-md-12 col-sm-12 col-xs-12" >
+                        <ul> 
+                          <li style="border-bottom:1px solid grey;"><a>Movie Making</a></li>
+                          <li style="border-bottom:1px solid grey;"><a >Script Writing</a></li>
+                          <li style="border-bottom:1px solid grey;"><a >Story Boarding</a></li>
+                          <li style="border-bottom:1px solid grey;" ><a >Poster & Banner Designing</a></li>
+                          <li style="border-bottom:1px solid grey;"><a>Professional Photoshoot</a></li>
+                          <li style="border-bottom:1px solid grey;"><a>Shooting location/Spot</a></li>
+                          <li><a>Script Writing</a></li>
+                        </ul>
+                      </li>
+                     
+                    </ul>
+                  </li>
+            </div>
+          </div>
+           
+            
+            
+           
+            
+            
+           
+       
+        
+      </ul>
+    </div>
+    </div>
+    <!-- /.nav-collapse -->
+  </nav>
+
+</div>
+
+
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header" style="text-align:center;font-size:25px;">
+              <span>Log In</span>
+              <button type="button" class="close" data-dismiss="modal" style="font-size:40px;">&times;</button>
+            </div>
+        <section>
+            <div class="modal-body" style="min-width: 100%;">
+              
+                  <input type="text" [(ngModel)]="username" name="username"  class="form-control" placeholder="Mobile Number/Email">
+                  <br/>
+                   <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password">
+                   <br/>
+                   <button class="btn btn-primary" style="padding:10px 140px;" (click)="gotoResponse();" (keydown.enter)="gotoResponse()" data-dismiss="modal">Login</button>
+              </div>
+              <div style="margin-left:110px;">
+              <a [routerLink]="['/forgotpassword']"  data-dismiss="modal">Forgot Password</a>
+            </div>
+        </section>
+        <br/>
+         <div class="modal-footer" style="text-align:center">
+        <span>Don't have an Account?</span><a style="color:blue;cursor:pointer;" data-dismiss="modal" data-toggle="modal" data-target="#register">&nbsp;&nbsp;SignUp Now</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal video-modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align:center;font-size:25px;">
+                <span>Register</span>
+                <button type="button" class="close" data-dismiss="modal" style="font-size:40px;">&times;</button>
+              </div>
+          <section>
+              <div class="modal-body" style="min-width: 100%;">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <select formControlName="profession" name="profession_type" class="form-control">
+                          <option  selected value style="color:orange;">Select your profession</option>
+                          <option *ngFor="let profession of profession" input type="checkbox">{{profession.name}}</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <input class="form-control" formControlName="name" required minlength="3" type="text" placeholder="Full Name"/>
+                        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">name is required</div>
+                         </div>
+                         <div class="form-group">
+                            <input class="form-control" formControlName="email" type="email" name="email" placeholder="Email"/>
+                           </div>
+                           <div class="form-group">
+                              <input  class="form-control" formControlName="mobile" type="text"  placeholder="Mobile"/>
+                               </div>
+                               <div class="form-group">
+                                  <input class="form-control" formControlName="password" id="password" type="password" placeholder="Password">
+                                 </div>
+                                 <div class="form-group">
+                                    <input class="form-control"  formControlName="rePassword" type="password"  placeholder="Confirm Password"/>
+                                   </div>
+                   
+                     <button class="btn btn-primary" style="padding:10px 135px;" [disabled]="form.invalid" (click)="onSubmit()" data-dismiss="modal" >Register</button>
+                     </form>
+                </div>
+          </section>
+           <div class="modal-footer" style="text-align:center">
+             
+                  <span>Already have an account?&nbsp;</span><a style="color:blue;cursor:pointer;" data-target="#myModal" data-toggle="modal" data-dismiss="modal">Log In</a>
+                
+        </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="modal video-modal fade" id="picture" tabindex="-1" role="dialog" aria-labelledby="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header" style="text-align:center;font-size:25px;">
+                  <span>Change Your Profile Picture</span>
+                  <button type="button" class="close" data-dismiss="modal" style="font-size:40px;margin-top:-60px;">&times;</button>
+                </div>
+            <section>
+                <div class="modal-body" style="min-width: 100%;">
+                  <div class="row">
+                    <div class="col-lg-7">
+                        <input type="file">
+                      </div>
+                      <div class="col-lg-3">
+                        <button class="btn btn-primary" style="margin-left:30px;" data-dismiss="modal">Submit</button>
+                        </div>
+                  </div>
+                  </div>
+            </section>
+            <br/>
+             
+          </div>
+        </div>
+      </div>
+    <router-outlet></router-outlet> 

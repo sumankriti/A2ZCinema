@@ -74,6 +74,7 @@ public Users changePassword(Users user) {
 	.setParameter(2,user.getUser_id()).executeUpdate();
 	return user;
 }
+
 	
 	
 }

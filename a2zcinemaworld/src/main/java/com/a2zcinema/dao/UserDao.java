@@ -21,5 +21,7 @@ public interface UserDao {
 	public Object getUserByName(String name);
 	
 	public Users changePassword(Users user);
+	
+	
 
 }

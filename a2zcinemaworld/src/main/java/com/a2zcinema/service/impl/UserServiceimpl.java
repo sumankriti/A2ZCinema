@@ -56,11 +56,8 @@ public Users changePassword(Users user) {
 	return userDao.changePassword(user);
 }
 
-//@Transactional(readOnly=true)
-//public ArrayList<Users> getUserByName(String name) {
-//	// TODO Auto-generated method stub
-//	return userDao.getUserByName(name);
-//}
+
+
 
 
 }
